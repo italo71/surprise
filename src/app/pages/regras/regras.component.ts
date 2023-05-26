@@ -8,14 +8,14 @@ import { CacheService } from 'src/app/shared/service/cache.service';
 })
 export class RegrasComponent implements OnInit {
   constructor(
-    private cache:CacheService
-  ){}
+    private cache: CacheService
+  ) { }
 
   ngOnInit(): void {
-      let json = this.cache.regrasLidas();
-      if(json == null){
-        this.cache.lerRegras(1);
-      }
+    let json = this.cache.regrasLidas();
+    if (!json.leitura) {
+      this.cache.lerRegras(1);
+    }
   }
 
 }

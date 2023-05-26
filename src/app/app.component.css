@@ -40,3 +40,23 @@ li{
 .div-img{
     width: 5%;
 }
+
+.div-btn-bug{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-bug{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

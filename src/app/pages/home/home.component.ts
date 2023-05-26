@@ -21,12 +21,19 @@ export class HomeComponent implements OnInit {
 
   comecar() {
     let leitura = this.cache.regrasLidas();
-    if (leitura == null) {
+    let nivel = this.cache.obterNivel();
+    if (!leitura.leitura) {
       this.alert.erro("Leia as regras", "Você não leu as regras né -_-", false, 2500);
       let i = setInterval(() => {
         this.router.navigate(['/regras']);
         clearInterval(i);
       }, 2500);
+    }
+    else if (nivel != null && nivel.ultimoNivel > 1) {
+      return;
+    }
+    else {
+      this.router.navigate(['/queComecemOsJogos']);
     }
   }
 }

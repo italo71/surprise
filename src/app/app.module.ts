@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegrasComponent } from './pages/regras/regras.component';
+import { E01Component } from './pages/enigmas/e01/e01.component';
+import { E02Component } from './pages/enigmas/e02/e02.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegrasComponent
+    RegrasComponent,
+    E01Component,
+    E02Component
   ],
   imports: [
     BrowserModule,
