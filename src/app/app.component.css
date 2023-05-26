@@ -1,0 +1,42 @@
+.nav-header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 175, 214);
+    padding: 10px;
+}
+
+.div-lista {
+    display: flex;
+    align-content: end;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {
+    margin-top: 5px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+li{
+    margin-right: 10px;
+}
+
+.f-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.f-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-img{
+    width: 5%;
+}

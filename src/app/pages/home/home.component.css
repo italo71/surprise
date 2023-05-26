@@ -1,0 +1,11 @@
+.btn-iniciar {
+    border: 1px solid lightgray;
+}
+
+.btn-iniciar:hover{
+    background-color: rgba(255, 255, 0, 0.719);
+}
+
+.row{
+    padding: 15px;
+}
