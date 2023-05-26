@@ -52,6 +52,11 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1s;
+}
+
+.none{
+    display: none !important;
 }
 
 .btn-bug{

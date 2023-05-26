@@ -14,7 +14,7 @@
     </div>
   </div>
   <router-outlet></router-outlet>
-  <div class="div-btn-bug">
+  <div class="div-btn-bug" [class]="bug?'':'none'">
     <button class="btn btn-bug">
       <span class="material-symbols-outlined">bug_report</span>
     </button>

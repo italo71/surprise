@@ -10,9 +10,11 @@ import { CacheService } from './shared/service/cache.service';
 export class AppComponent implements OnInit {
   title = 'surprise';
 
+  bug: boolean = false;
+
   constructor(
     private comu: ComunicationService,
-    private cache:CacheService
+    private cache: CacheService
   ) {
     this.comu.listen().subscribe(m => {
       console.log(m);
@@ -20,15 +22,28 @@ export class AppComponent implements OnInit {
       console.log(auxLeitura);
       if (auxLeitura[0] == 'leitura') {
         if (parseInt(auxLeitura[1]) > 0) {
-
+          return;
+        }
+        else if(auxLeitura[1] == 0){
+          
         }
       }
     });
   }
 
   ngOnInit(): void {
-    if(this.cache.regrasLidas() == null){
+    if (this.cache.regrasLidas() == null) {
       this.cache.lerRegras(false);
+    }
+    else {
+      let j = this.cache.regrasLidas();
+      console.log(j.leitura);
+      if (j.leitura == false) {
+        this.bug = false
+      }
+      else{
+        this.bug = true;
+      }
     }
   }
 
