@@ -15,7 +15,7 @@ const routes: Routes = [
     component:RegrasComponent
   },
   {
-    path: 'queComecemOsJogos',
+    path: 'whereIam',
     component:E01Component
   },
 ];

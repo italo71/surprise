@@ -1,5 +1,5 @@
 <div class="container-fluid" style="padding: 0; margin: 0; width: 100%;overflow-x: hidden;">
-  <div class="col-12 nav-header">
+  <div class="col-12 nav-header" *ngIf="navBar">
     <div class="col-12 d-flex row">
       <div class="div-img">
         <img src="../assets/icons/logoSfundo1.png" width="80px" alt>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <router-outlet></router-outlet>
-  <div class="div-btn-bug" [class]="bug?'':'none'">
+  <div class="div-btn-bug" [class]="bug?'':'none'" style="z-index: 999999;">
     <button class="btn btn-bug">
       <span class="material-symbols-outlined">bug_report</span>
     </button>

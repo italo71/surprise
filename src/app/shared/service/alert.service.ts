@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertOptions } from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,9 @@ export class AlertService {
       title: title,
       text: message,
     })
+  }
+
+  custon(obj:SweetAlertOptions<any>){
+    return Swal.fire(obj);
   }
 }

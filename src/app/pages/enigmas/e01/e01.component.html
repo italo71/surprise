@@ -1,1 +1,16 @@
-<p>e01 works!</p>
+<div class="black">
+    <div class="p-10">
+        <p class="ocultar">Antes de continuar, preciso que informe seu nome</p>
+        <input type="text" id="o" class="input-nome none" [(ngModel)]="nome">
+        <button class="btn btn-green" *ngIf="nome" (click)="salvarNome()">Enviar</button>
+
+        <p class="parte-1 none">Seja Bem vindo {{nome}}</p>
+        <p class="parte-2 none">É um prazer ter você aqui</p>
+        <p class="parte-3 none">Você foi selecionada para participar da maior equipe</p>
+        <p class="parte-4 none">de detetives do mundo</p>
+        <p class="parte-5 none">e para ingressar completamente</p>
+        <p class="parte-6 none">tera que passar por alguns testes simples</p>
+
+        
+    </div>  
+</div>
