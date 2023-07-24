@@ -1,0 +1,16 @@
+#tela{
+    width: 100% !important;
+    height: 100vh !important;
+    display: flex;
+}
+
+#caixa{
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    background-color: black;
+    width: 65px;
+    height: 65px;
+    z-index: 99999;
+    cursor: pointer;
+}
