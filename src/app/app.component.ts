@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'surprise';
   navBar: boolean = true;
   bug: boolean = false;
+  helpList: Array<any> = [];
 
   constructor(
     private comu: ComunicationService,
@@ -50,7 +51,6 @@ export class AppComponent implements OnInit {
     }
     else {
       let j = this.cache.regrasLidas();
-      console.log(j.leitura);
       if (j.leitura == false) {
         this.bug = false
       }
@@ -65,11 +65,24 @@ export class AppComponent implements OnInit {
     let jsonNivel = this.cache.obterNivel();
     if (jsonNivel) {
       let nivel = jsonNivel.ultimoNivel;
-      if (nivel == '0') {
+      let nNivel = Number(nivel);
+      console.log(typeof (nNivel))
+      if (typeof(nNivel) == 'number')
+        this.helpList[Number(nivel)] = true;
+      if (nivel == 0 && this.helpList[0] == null) {
         this.alert.custon({
-          background:'black',
-          text:'ferramenta de comunicação que representa letras, números e sinais de pontuação por meio de uma sequência de pontos e traços, ela pode ser usada para navegar por ai'
+          background: 'black',
+          text: 'ferramenta de comunicação que representa letras, números e sinais de pontuação por meio de uma sequência de pontos e traços, ela pode ser usada para navegar por ai'
         });
+      }
+      else if (nivel == 0 && this.helpList[0]) {
+        this.alert.custon({
+          background: 'black',
+          text: 'A url pode te levar a qualquer lugar'
+        });
+      }
+      else if (nivel == 1) {
+        this.comu.filter('help-2');
       }
     }
   }

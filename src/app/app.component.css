@@ -65,3 +65,9 @@ li{
     align-items: center;
     justify-content: center;
 }
+
+@media print {
+    .nav-header{
+        display: none !important;
+    }
+}

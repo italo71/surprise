@@ -87,7 +87,7 @@ export class E01Component implements OnInit {
       this.comu.filter('bug-on');
     }, 2000);
 
-    this.cache.passarNivel('0', 'teste-ingresso');
+    this.cache.passarNivel(0, 'teste-ingresso');
   }
 
   download(filename: any = 'teste', text: any = 'oi') {

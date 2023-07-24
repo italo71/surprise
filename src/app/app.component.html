@@ -15,7 +15,7 @@
   </div>
   <router-outlet></router-outlet>
   <div class="div-btn-bug" [class]="bug?'':'none'" style="z-index: 999999;">
-    <button class="btn btn-bug">
+    <button class="btn btn-bug" (click)="bug_press()">
       <span class="material-symbols-outlined">bug_report</span>
     </button>
   </div>

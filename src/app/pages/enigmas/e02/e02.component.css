@@ -1,0 +1,26 @@
+.print {
+    display: none !important;
+}
+
+h2{
+    text-align: center;
+}
+
+.no-print{
+    display: none !important;
+}
+
+.span-text{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+@media print {
+    .print{
+        display: flex !important;
+    }
+    .no-print, .np{
+        display: none !important;
+    }
+}
