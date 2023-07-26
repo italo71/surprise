@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     private alert: AlertService
   ) {
     this.comu.listen().subscribe(m => {
-      console.log(m);
+      //console.log(m);
       let auxLeitura = m.split(' ');
       if (auxLeitura[0] == 'leitura') {
         if (parseInt(auxLeitura[1]) > 0) {
@@ -63,12 +63,9 @@ export class AppComponent implements OnInit {
 
   bug_press() {
     let jsonNivel = this.cache.obterNivel();
+    console.log(jsonNivel);
     if (jsonNivel) {
       let nivel = jsonNivel.ultimoNivel;
-      let nNivel = Number(nivel);
-      console.log(typeof (nNivel))
-      if (typeof(nNivel) == 'number')
-        this.helpList[Number(nivel)] = true;
       if (nivel == 0 && this.helpList[0] == null) {
         this.alert.custon({
           background: 'black',
@@ -81,9 +78,24 @@ export class AppComponent implements OnInit {
           text: 'A url pode te levar a qualquer lugar'
         });
       }
-      else if (nivel == 1) {
+      else if (nivel == 1 && this.helpList[1] == null) {
+        this.alert.custon({
+          background: 'black',
+          text: 'Precione CTRL + P para ativar a impressão'
+        });
+      }
+      else if (nivel == 1 && this.helpList[1]) {
         this.comu.filter('help-2');
       }
+      else if (nivel == 2) {
+        this.alert.custon({
+          background: 'black',
+          text: 'Mova o mouse até conseguir clicar em algo'
+        });
+      }
+      let nNivel = Number(nivel);
+      if (typeof (nNivel) == 'number')
+        this.helpList[Number(nivel)] = true;
     }
   }
 }

@@ -1,6 +1,6 @@
 #tela{
     width: 100% !important;
-    height: 100vh !important;
+    height: calc(100vh - 90px) !important;
     display: flex;
 }
 
@@ -8,9 +8,27 @@
     position: absolute;
     top: 20%;
     right: 15%;
-    background-color: black;
+    /* background-color: black; */
     width: 65px;
     height: 65px;
     z-index: 99999;
-    cursor: pointer;
+}
+
+#caixa2{
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+    /* background-color: black; */
+    width: 65px;
+    height: 65px;
+    z-index: 99999;
+}
+
+.click{
+    cursor: pointer !important;
+}
+
+.span-texto{
+    width: 100%;
+    text-align: center;
 }

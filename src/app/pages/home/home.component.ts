@@ -29,11 +29,17 @@ export class HomeComponent implements OnInit {
         clearInterval(i);
       }, 2500);
     }
-    else if (nivel != null && nivel.ultimoNivel > 1) {
-      return;
+    else if (nivel != null && nivel.ultimoNivel >= 1) {
+      let u = nivel.ultimoNivel;
+      if (u == 1) {
+        this.router.navigate(['/CONGRATULATIONS']);
+      }
+      else if (u == 2) {
+        this.router.navigate(['/VictoriaEldridge']);
+      }
     }
     else {
-      this.router.navigate(['/queComecemOsJogos']);
+      this.router.navigate(['/whereIam']);
     }
   }
 }

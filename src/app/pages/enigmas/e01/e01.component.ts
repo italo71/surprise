@@ -22,6 +22,7 @@ export class E01Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    document.getElementById('max')?.requestFullscreen();
     this.comu.filter('nav-off');
     this.comu.filter('bug-off');
     let i = setInterval(() => {
@@ -91,6 +92,7 @@ export class E01Component implements OnInit {
   }
 
   download(filename: any = 'teste', text: any = 'oi') {
+    document.exitFullscreen();
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
