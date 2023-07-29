@@ -1,7 +1,7 @@
 <div class="black" id="max">
     <div class="p-10">
         <p class="ocultar">Antes de continuar, preciso que informe seu nome</p>
-        <input type="text" id="o" class="input-nome none" [(ngModel)]="nome">
+        <input type="text" id="o" class="input-nome none" [(ngModel)]="nome" autocomplete="off">
         <button class="btn btn-green" *ngIf="nome" (click)="salvarNome()">Enviar</button>
 
         <p class="parte-1 none">Seja Bem vindo {{nome}}</p>

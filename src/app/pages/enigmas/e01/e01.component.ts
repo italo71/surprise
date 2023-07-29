@@ -28,8 +28,10 @@ export class E01Component implements OnInit {
     let i = setInterval(() => {
       $('#o').removeClass('none');
       clearInterval(i);
+      let input = document.getElementById('o') as HTMLInputElement;
+      input.selectionStart = input.value.length;
+      input.selectionEnd = input.value.length;
     }, 3100);
-
     this.interval = setInterval(() => {
       if ($('#o').hasClass('pisca')) {
         $('#o').removeClass('pisca');
@@ -53,7 +55,6 @@ export class E01Component implements OnInit {
 
   salvarNome() {
     let lista: Array<any> = this.nome.split(' ');
-    console.log(lista);
     let n;
     if (lista.length > 1) {
       this.alert.custon({

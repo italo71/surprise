@@ -24,7 +24,7 @@ export class E03Component implements OnInit {
     this.cache.passarNivel(2, null);
     this.soundElement = document.getElementById('sound') as HTMLAudioElement;
     this.soundElement2 = document.getElementById('sound2') as HTMLAudioElement;
-    this.soundElement.play();
+    //this.soundElement.play();
     this.soundElement.volume = (0.05);
     $('#tela').on('mousemove', (event: any) => {
       let mousex = event.originalEvent.clientX;
