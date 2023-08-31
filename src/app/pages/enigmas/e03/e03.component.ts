@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from 'src/app/shared/service/alert.service';
 import { CacheService } from 'src/app/shared/service/cache.service';
@@ -15,7 +16,8 @@ export class E03Component implements OnInit {
   constructor(
     private comu: ComunicationService,
     private alert: AlertService,
-    private cache: CacheService
+    private cache: CacheService,
+    private router:Router
   ) {
   }
 
@@ -24,7 +26,7 @@ export class E03Component implements OnInit {
     this.cache.passarNivel(2, null);
     this.soundElement = document.getElementById('sound') as HTMLAudioElement;
     this.soundElement2 = document.getElementById('sound2') as HTMLAudioElement;
-    //this.soundElement.play();
+    this.soundElement.play();
     this.soundElement.volume = (0.05);
     $('#tela').on('mousemove', (event: any) => {
       let mousex = event.originalEvent.clientX;
@@ -80,6 +82,7 @@ export class E03Component implements OnInit {
     })
     $('#tela').off();
     this.soundElement2.volume = 0;
+    this.router.navigate(['/receptor']);
   }
 
 }
