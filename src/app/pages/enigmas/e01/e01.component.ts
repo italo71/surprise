@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { nivelAtual } from 'src/app/shared/model/nivel';
 import { AlertService } from 'src/app/shared/service/alert.service';
 import { CacheService } from 'src/app/shared/service/cache.service';
 import { ComunicationService } from 'src/app/shared/service/comunication.service';
@@ -88,8 +89,10 @@ export class E01Component implements OnInit {
     let i = setInterval(() => {
       this.comu.filter('bug-on');
     }, 2000);
-
-    this.cache.passarNivel(0, 'teste-ingresso');
+    let nivel_atual: nivelAtual = new nivelAtual();
+    nivel_atual.nivel_atual = 0;
+    nivel_atual.obs = 'teste-ingresso';
+    this.cache.passarNivel(nivel_atual);
   }
 
   download(filename: any = 'teste', text: any = 'oi') {

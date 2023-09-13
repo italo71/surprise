@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class InputFieldComponent {
-  @Input() id: string = '';
+  @Input() i: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() type: string = 'text';

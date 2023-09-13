@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ComunicationService } from './comunication.service';
 import { sessao } from '../model/sessao';
+import { nivelAtual } from '../model/nivel';
 
 @Injectable({
   providedIn: 'root'
@@ -24,17 +25,20 @@ export class CacheService {
     sessionStorage.setItem('readedRules', JSON.stringify(postData));
   }
 
-  passarNivel(nivelAnterior: any, obs: any = null) {
+  passarNivel(nivelInfo: nivelAtual) {
     let json = {
-      "ultimoNivel": nivelAnterior,
-      "obs": obs
+      "nivel_atual": nivelInfo.nivel_atual,
+      "obs": nivelInfo.obs
     }
     sessionStorage.setItem('niveis', JSON.stringify(json));
   }
 
-  obterNivel() {
+  obterNivel(): nivelAtual {
     let v: any = sessionStorage.getItem('niveis');
-    return JSON.parse(v);
+    if (v == null) return new nivelAtual();
+    let nivel: nivelAtual = new nivelAtual();
+    nivel.map(JSON.parse(v));
+    return nivel;
   }
 
   gerarSessao(session: sessao) {
@@ -46,7 +50,7 @@ export class CacheService {
     if (sessaoStorage == null) return new sessao();
     sessaoStorage = JSON.parse(sessaoStorage);
     let session: sessao = new sessao();
-    session.map(sessaoStorage);
+    session.map(JSON.parse(sessaoStorage));
     return session;
   }
 

@@ -10,12 +10,12 @@
                         <div class="col-12 d-flex justify-content-center">
                             <div class="col-3 d-flex" style="flex-direction: column;">
                                 <div class="col-12">
-                                    <app-input-field label="Login" id="login_input"
+                                    <app-input-field label="Login" i="login_input"
                                         placeholder="Usuário de login"></app-input-field>
                                 </div>
                                 <div class="col-12 d-flex">
                                     <div class="col-11">
-                                        <app-input-field label="Senha" id="senha_input"
+                                        <app-input-field label="Senha" i="senha_input"
                                             [type]="!exibirSenha?'password':'text'" placeholder="Senha"></app-input-field>
                                     </div>
                                     <div class="col-1 d-flex">
@@ -25,7 +25,16 @@
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button class="btn btn-success" (click)="entrar()">Entrar</button>
+                                    <div class="col-10">
+                                        <span style="color: lightcoral;" class="none password_inccorect">Senha incorreta</span>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn btn-success" (click)="entrar()"><span *ngIf="!requestOn">Entrar</span>
+                                            <div class="spinner-border" role="status" *ngIf="requestOn">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

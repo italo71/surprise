@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from 'src/app/shared/service/alert.service';
 import { CacheService } from 'src/app/shared/service/cache.service';
 import { ComunicationService } from 'src/app/shared/service/comunication.service';
+import { nivelAtual } from 'src/app/shared/model/nivel';
 
 @Component({
   selector: 'app-e03',
@@ -17,15 +18,21 @@ export class E03Component implements OnInit {
     private comu: ComunicationService,
     private alert: AlertService,
     private cache: CacheService,
-    private router:Router
+    private router: Router
   ) {
   }
 
 
   ngOnInit(): void {
-    this.cache.passarNivel(2, null);
+    let n: nivelAtual = new nivelAtual();
+    n.nivel_atual = 2;
+    n.obs = null;
+    this.cache.passarNivel(n);
     this.soundElement = document.getElementById('sound') as HTMLAudioElement;
     this.soundElement2 = document.getElementById('sound2') as HTMLAudioElement;
+  }
+
+  start() {
     this.soundElement.play();
     this.soundElement.volume = (0.05);
     $('#tela').on('mousemove', (event: any) => {

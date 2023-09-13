@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { nivelAtual } from 'src/app/shared/model/nivel';
 import { AlertService } from 'src/app/shared/service/alert.service';
 import { CacheService } from 'src/app/shared/service/cache.service';
 import { ComunicationService } from 'src/app/shared/service/comunication.service';
@@ -25,6 +26,9 @@ export class E02Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cache.passarNivel(1, null);
+    let n:nivelAtual = new nivelAtual();
+    n.nivel_atual = 1;
+    n.obs = null;
+    this.cache.passarNivel(n);
   }
 }

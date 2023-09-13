@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
         clearInterval(i);
       }, 2500);
     }
-    else if (nivel != null && nivel.ultimoNivel >= 1) {
-      let u = nivel.ultimoNivel;
+    else if (nivel != null && nivel.nivel_atual >= 1) {
+      let u = nivel.nivel_atual;
       if (u == 1) {
         this.router.navigate(['/CONGRATULATIONS']);
       }

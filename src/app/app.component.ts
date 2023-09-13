@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
     let jsonNivel = this.cache.obterNivel();
     console.log(jsonNivel);
     if (jsonNivel) {
-      let nivel = jsonNivel.ultimoNivel;
+      let nivel = jsonNivel.nivel_atual;
       if (nivel == 0 && this.helpList[0] == null) {
         this.alert.custon({
           background: 'black',
