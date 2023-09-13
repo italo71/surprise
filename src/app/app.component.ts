@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComunicationService } from './shared/service/comunication.service';
 import { CacheService } from './shared/service/cache.service';
 import { AlertService } from './shared/service/alert.service';
+import { RestService } from './shared/service/rest.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit {
   constructor(
     private comu: ComunicationService,
     private cache: CacheService,
-    private alert: AlertService
+    private alert: AlertService,
+    private rest: RestService
   ) {
     this.comu.listen().subscribe(m => {
       //console.log(m);

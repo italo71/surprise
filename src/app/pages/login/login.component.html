@@ -1,0 +1,37 @@
+<div class="row mt-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-11">
+            <div class="card">
+                <div class="row">
+                    <div class="col-12 d-flex div-lista-regras" style="flex-direction: column;">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span style="font-size: 30px;">Login</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="col-3 d-flex" style="flex-direction: column;">
+                                <div class="col-12">
+                                    <app-input-field label="Login" id="login_input"
+                                        placeholder="Usuário de login"></app-input-field>
+                                </div>
+                                <div class="col-12 d-flex">
+                                    <div class="col-11">
+                                        <app-input-field label="Senha" id="senha_input"
+                                            [type]="!exibirSenha?'password':'text'" placeholder="Senha"></app-input-field>
+                                    </div>
+                                    <div class="col-1 d-flex">
+                                        <button class="btn-pass"><span class="material-symbols-outlined" (click)="togglePassword()">
+                                                {{!exibirSenha?'visibility':'visibility_off'}}
+                                            </span></button>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="btn btn-success" (click)="entrar()">Entrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
